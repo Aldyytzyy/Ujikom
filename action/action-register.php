@@ -1,5 +1,6 @@
 <?php
 include 'connection.php';
+session_start();
 
 if ($_SERVER["REQUEST_METHOD"] == "POST") {
     $username = $_POST['username'];
@@ -22,6 +23,13 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
         $stmt->bind_param("ssss", $username, $password, $email, $role);
 
         if ($stmt->execute()) {
+            // Mulai sesi dan simpan informasi pengguna ke dalam sesi
+            $_SESSION['user'] = [
+                'id' => $stmt->insert_id,
+                'username' => $username,
+                'email' => $email,
+                'role' => $role
+            ];
             echo "<script>alert('Akun baru berhasil dibuat'); window.location.href='../index.php';</script>";
         } else {
             echo "<script>alert('Error: " . $sql . "<br>" . $conn->error . "'); window.location.href='../index.php';</script>";

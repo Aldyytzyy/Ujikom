@@ -69,11 +69,32 @@ $incomplete_tasks = $conn->query("SELECT COUNT(*) AS count FROM tasks WHERE user
                     <h2 class="panel-title">Hapus akun</h2>
                 </div>
                 <div class="panel-body">
-                    <form action="action/action-delete-account.php" method="post" onsubmit="return confirm('Apakah anda yakin ingin menghapus akun? Semua tugas akan ikut terhapus secara permanen.');">
-                        <button type="submit" class="btn btn-danger">Hapus akun saya</button>
-                    </form>
+                    <button type="button" class="btn btn-danger" data-toggle="modal" data-target="#deleteAccountModal">Hapus akun saya</button>
                 </div>
             </div>
+
+            <!-- Modal -->
+            <div id="deleteAccountModal" class="modal fade" role="dialog">
+                <div class="modal-dialog">
+                    <div class="modal-content">
+                        <div class="modal-header">
+                            <button type="button" class="close" data-dismiss="modal">&times;</button>
+                            <h4 class="modal-title">Hapus Akun</h4>
+                        </div>
+                        <div class="modal-body">
+                            <form id="deleteAccountForm" action="action/action-delete-account.php" method="post">
+                                <div class="form-group">
+                                    <p>Apakah Anda yakin ingin menghapus akun Anda? Senua Tugas akan ikut terhapus secara permanen!!</p>
+                                    <label for="password">Masukkan Kata Sandi:</label>
+                                    <input type="password" class="form-control" id="password" name="password" required>
+                                </div>
+                                <button type="submit" class="btn btn-danger">Hapus akun saya</button>
+                            </form>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            
         </div>
     </div>
 </div>
