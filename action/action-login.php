@@ -1,9 +1,17 @@
 <?php
 include 'connection.php';
+session_start();
 
 if ($_SERVER["REQUEST_METHOD"] == "POST") {
     $email = $_POST['email'];
     $password = $_POST['password'];
+    $captcha = $_POST['captcha'];
+
+    // Validate CAPTCHA
+    if ($captcha !== $_SESSION['captcha']) {
+        echo "<script>alert('Captcha salah'); window.location.href='../index.php';</script>";
+        exit();
+    }
 
     // Check jika email sudah ada
     $sql = "SELECT * FROM users WHERE email = ?";
@@ -16,7 +24,6 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
         $user = $result->fetch_assoc();
         if (password_verify($password, $user['password'])) {
             // mulai session dan simpan data user
-            session_start();
             $_SESSION['user'] = [
                 'id' => $user['id'],
                 'username' => $user['username'],

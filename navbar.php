@@ -97,7 +97,11 @@ if (session_status() == PHP_SESSION_NONE) {
                         <label for="password">Kata sandi:</label>
                         <input type="password" id="password" name="password" class="form-control" required>
                     </div>
-                    
+                    <div class="form-group">
+                        <label for="captcha">Captcha:</label>
+                        <input type="text" id="captcha" name="captcha" class="form-control" required>
+                        <img src="captcha.php" alt="CAPTCHA Image">
+                    </div>
                     <button type="submit" class="btn btn-primary">Masuk</button>
                 </form>
             </div>
@@ -129,7 +133,11 @@ if (session_status() == PHP_SESSION_NONE) {
                         <label for="reg_email">Email:</label>
                         <input type="email" id="reg_email" name="email" class="form-control" required>
                     </div>
-                   
+                    <div class="form-group">
+                        <label for="reg_captcha">Captcha:</label>
+                        <input type="text" id="reg_captcha" name="captcha" class="form-control" required>
+                        <img src="captcha.php" alt="CAPTCHA Image">
+                    </div>
                     <button type="submit" class="btn btn-primary">Buat akun baru</button>
                 </form>
             </div>

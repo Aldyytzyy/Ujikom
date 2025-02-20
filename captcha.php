@@ -5,6 +5,11 @@ session_start();
 error_reporting(E_ALL);
 ini_set('display_errors', 1);
 
+// Check if GD library is installed
+if (!extension_loaded('gd')) {
+    die('GD library is not installed');
+}
+
 // Generate random string
 $characters = 'ABCDEFGHIJKLMNOPQRSTUVWXYZabcdefghijklmnopqrstuvwxyz0123456789';
 $captcha_string = '';
@@ -39,7 +44,7 @@ for ($i = 0; $i < 5; $i++) {
 }
 
 // Check if the font file exists
-$font_path = './arialbd.ttf';
+$font_path = __DIR__ . '/assets/fonts/arial.ttf';
 if (!file_exists($font_path)) {
     die('Font file not found');
 }
