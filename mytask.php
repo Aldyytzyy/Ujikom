@@ -97,7 +97,7 @@ $tasks = $conn->query("SELECT tasks.*, users.username FROM tasks JOIN users ON t
                 <th>Ditambahkan Pada</th>
             </tr>
         </thead>
-        <tbody id="taskTable">
+        <tbody id="taskTable" >
             <?php while ($task = $tasks->fetch_assoc()): ?>
                 <tr data-task="<?php echo htmlspecialchars($task['task']); ?>" data-date="<?php echo $task['created_at']; ?>">
                     <td><?php echo htmlspecialchars($task['username']); ?></td>

@@ -6,6 +6,7 @@ if (session_status() == PHP_SESSION_NONE) {
 <html>
 <head>
     <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/css/bootstrap.min.css">
+    <link rel="stylesheet" href="style.css">
     <link rel="website icon" type="css" href="image/th.jpeg">
     <!-- jQuery library -->
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.7.1/jquery.min.js"></script>
@@ -14,107 +15,6 @@ if (session_status() == PHP_SESSION_NONE) {
     <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/js/bootstrap.min.js"></script>
 
     <title>Navbar</title>
-    <style>
-        .navbar-inverse {
-            background-color: #007BFF; /* Set navbar color to blue */
-            border-color: #007BFF;
-        }
-        .navbar-inverse .navbar-brand, 
-        .navbar-inverse .navbar-nav > li > a {
-            color: white; /* Ensure text color is white for contrast */
-        }
-        .navbar-inverse .navbar-nav > li > a:hover {
-            background-color: #0056b3; /* Darker blue on hover */
-            color: white;
-        }
-        .navbar-inverse .navbar-nav > li > a:focus {
-            background-color: #0056b3; /* Darker blue on focus */
-            color: white;
-        }
-        /* Dark mode styles */
-        body.dark-mode {
-            background-color: #121212;
-            color: #ffffff;
-        }
-        .navbar-inverse.dark-mode {
-            background-color: #333333;
-            border-color: #333333;
-        }
-        .navbar-inverse.dark-mode .navbar-brand, 
-        .navbar-inverse.dark-mode .navbar-nav > li > a {
-            color: #ffffff;
-        }
-        .navbar-inverse.dark-mode .navbar-nav > li > a:hover,
-        .navbar-inverse.dark-mode .navbar-nav > li > a:focus {
-            background-color: #555555;
-            color: #ffffff;
-        }
-        .btn-dark-mode {
-            background-color: #555555;
-            color: #ffffff;
-            border: none;
-            cursor: pointer;
-        }
-        .btn-dark-mode:hover {
-            background-color: #777777;
-        }
-        .dark-mode .modal-content {
-            background-color: #333333;
-            color: #ffffff;
-        }
-        .dark-mode .modal-header, .dark-mode .modal-footer {
-            border-color: #555555;
-        }
-        .dark-mode .btn-link {
-            color: #ffffff;
-        }
-        .dark-mode .btn-link:hover {
-            color: #cccccc;
-        }
-        .switch {
-            position: relative;
-            display: inline-block;
-            width: 60px;
-            height: 34px;
-        }
-        .switch input {
-            opacity: 0;
-            width: 0;
-            height: 0;
-        }
-        .slider {
-            position: absolute;
-            cursor: pointer;
-            top: 0;
-            left: 0;
-            right: 0;
-            bottom: 0;
-            background-color: #ccc;
-            transition: .4s;
-        }
-        .slider:before {
-            position: absolute;
-            content: "";
-            height: 26px;
-            width: 26px;
-            left: 4px;
-            bottom: 4px;
-            background-color: white;
-            transition: .4s;
-        }
-        input:checked + .slider {
-            background-color: #2196F3;
-        }
-        input:checked + .slider:before {
-            transform: translateX(26px);
-        }
-        .slider.round {
-            border-radius: 34px;
-        }
-        .slider.round:before {
-            border-radius: 50%;
-        }
-    </style>
     <script>
         // Toggle dark mode
         function toggleDarkMode() {

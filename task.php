@@ -46,6 +46,7 @@ $tasks = $conn->query("SELECT * FROM tasks WHERE user_id = '$user_id'");
     <title>To-Do List</title>
     <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/css/bootstrap.min.css">
     <link rel="website icon" type="css" href="image/th.jpeg">
+
 </head>
 <body>
 <?php include 'navbar.php'; ?>

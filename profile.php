@@ -9,6 +9,12 @@ if (!isset($_SESSION['user'])) {
 }
 
 $user = $_SESSION['user'];
+
+// Ambil data tugas dari database
+include 'action/connection.php';
+$user_id = $user['id'];
+$completed_tasks = $conn->query("SELECT COUNT(*) AS count FROM tasks WHERE user_id = '$user_id' AND completed = 1")->fetch_assoc()['count'];
+$incomplete_tasks = $conn->query("SELECT COUNT(*) AS count FROM tasks WHERE user_id = '$user_id' AND completed = 0")->fetch_assoc()['count'];
 ?>
 
 <!DOCTYPE html>
@@ -52,6 +58,8 @@ $user = $_SESSION['user'];
                     <p><strong>Username:</strong> <?php echo htmlspecialchars($user['username']); ?></p>
                     <p><strong>Email:</strong> <?php echo htmlspecialchars($user['email']); ?></p>
                     <p><strong>Role:</strong> <?php echo htmlspecialchars($user['role']); ?></p>
+                     <p><strong>Tugas yang telah selesai:</strong> <?php echo $completed_tasks; ?></p>
+                    <p><strong>Tugas yang belum selesai:</strong> <?php echo $incomplete_tasks; ?></p>
                     <h4><a href="change-password.php">Ubah Kata Sandi</a></h4>
                 </div>
             </div>
