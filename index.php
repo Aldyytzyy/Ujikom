@@ -1,3 +1,6 @@
+<?php
+session_start();
+?>
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -23,14 +26,49 @@
         .dark-mode .btn-link:hover {
             color: #cccccc;
         }
+        .btn-group {
+            margin-bottom: 20px; /* Menambahkan jarak antara tombol dan teks */
+        }
+        .btn-group p {
+            margin-top: 10px; /* Menambahkan jarak antara tombol dan teks */
+        }
+        .btn-primary {
+            border-radius: 8px; /* Menambahkan border radius pada tombol */
+        }
     </style>
 </head>
 <body>
     <?php include 'navbar.php'; ?>
+    <?php
+    $username = isset($_SESSION['user']['username']) ? $_SESSION['user']['username'] : 'di Website';
+    ?>
 
     <div class="container">
-        <h1>Selamat Datang di Website</h1>
+        <h1>Selamat Datang <?php echo htmlspecialchars($username); ?></h1>
         <p>Ini adalah halaman selamat datang.</p>
+
+        <?php if (isset($_SESSION['user'])): ?>
+            <div class="btn-group">
+                <a href="mytask.php" class="btn btn-primary">My Task</a>
+                <br>
+                <br>
+                <p>Halaman ini berisi daftar tugas Anda.</p>
+            </div>
+            <br>
+            <div class="btn-group">
+                <a href="profile.php" class="btn btn-primary">Profile</a>
+                <br>
+                <br>
+                <p>Halaman ini berisi informasi profil Anda.</p>
+            </div>
+            <br>
+            <div class="btn-group">
+                <a href="mytask.php" class="btn btn-primary">Mytask</a>
+                <br>
+                <br>
+                <p>Halaman ini berisi informasi daftar tugas</p>
+            </div>
+        <?php endif; ?>
     </div>
 </body>
 </html>

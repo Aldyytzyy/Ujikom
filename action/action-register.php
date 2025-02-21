@@ -7,6 +7,13 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
     $password = password_hash($_POST['password'], PASSWORD_DEFAULT); // sembunyikan password di database
     $email = $_POST['email'];
     $role = isset($_POST['role']) ? $_POST['role'] : 'user';
+    $captcha = $_POST['captcha'];
+
+    // Validate CAPTCHA
+    if ($captcha !== $_SESSION['captcha']) {
+        echo "<script>alert('Captcha salah'); window.location.href='../index.php';</script>";
+        exit();
+    }
 
     // Cek jika email sudah ada
     $checkEmailSql = "SELECT * FROM users WHERE email = ?";
