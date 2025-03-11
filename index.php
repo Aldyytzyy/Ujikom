@@ -8,6 +8,7 @@ session_start();
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Selamat Datang</title>
     <link rel="website icon" type="css" href="image/th.jpeg">
+    <link rel = "stylesheet" href = "style.css">
     <style>
         body.dark-mode {
             background-color: #121212;

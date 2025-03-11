@@ -21,6 +21,7 @@ $user = $_SESSION['user'];
     <title>Change Password</title>
     <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/css/bootstrap.min.css">
     <link rel="website icon" type="css" href="image/th.jpeg">
+    <link rel="stylesheet" href="style.css">
 </head>
 <body>
 <?php include 'navbar.php'; ?>
