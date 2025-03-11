@@ -61,6 +61,7 @@ if (session_status() == PHP_SESSION_NONE) {
                 <li><a href="profile.php">Profile</a></li>
                 <li><a href="task.php">Tugas</a></li>
                 <li><a href="mytask.php">Daftar Tugas</a></li>
+                <li><a href="taptap.php">taptap layar</a></li>
             </ul>
             <ul class="nav navbar-nav navbar-right">
                 <?php if (isset($_SESSION['user'])): ?>

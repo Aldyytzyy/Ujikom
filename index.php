@@ -46,29 +46,37 @@ session_start();
     <div class="container">
         <h1>Selamat Datang <?php echo htmlspecialchars($username); ?></h1>
         <p>Ini adalah halaman selamat datang.</p>
+        <script>
+        function updateTime() {
+            const now = new Date();
+            const hours = now.getHours().toString().padStart(2, '0');
+            const minutes = now.getMinutes().toString().padStart(2, '0');
+            const seconds = now.getSeconds().toString().padStart(2, '0');
+            const currentTime = `${hours}:${minutes}:${seconds}`;
+            document.getElementById('current-time').textContent = `Waktu saat ini: ${currentTime}`;
+        }
+
+        setInterval(updateTime, 1000);
+        updateTime(); // Initial call to display time immediately
+    </script>
+        <p id="current-time"></p>
 
         <?php if (isset($_SESSION['user'])): ?>
             <div class="btn-group">
                 <a href="mytask.php" class="btn btn-primary">My Task</a>
-                <br>
-                <br>
                 <p>Halaman ini berisi daftar tugas Anda.</p>
             </div>
-            <br>
             <div class="btn-group">
                 <a href="profile.php" class="btn btn-primary">Profile</a>
-                <br>
-                <br>
                 <p>Halaman ini berisi informasi profil Anda.</p>
             </div>
-            <br>
             <div class="btn-group">
-                <a href="mytask.php" class="btn btn-primary">Mytask</a>
-                <br>
-                <br>
-                <p>Halaman ini berisi informasi daftar tugas</p>
+                <a href="anotherpage.php" class="btn btn-primary">Another Page</a>
+                <p>Halaman ini berisi informasi lainnya.</p>
             </div>
         <?php endif; ?>
     </div>
+
+    
 </body>
 </html>
