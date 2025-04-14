@@ -61,7 +61,7 @@ if (session_status() == PHP_SESSION_NONE) {
                 <li><a href="profile.php">Profile</a></li>
                 <li><a href="task.php">Tugas</a></li>
                 <li><a href="mytask.php">Daftar Tugas</a></li>
-                <li><a href="taptap.php">taptap layar</a></li>
+                <li><a href="contact.php">contact us</a></li>
             </ul>
             <ul class="nav navbar-nav navbar-right">
                 <?php if (isset($_SESSION['user'])): ?>
@@ -127,12 +127,12 @@ if (session_status() == PHP_SESSION_NONE) {
                         <input type="text" id="reg_username" name="username" class="form-control" required>
                     </div>
                     <div class="form-group">
-                        <label for="reg_password">Kata sandi:</label>
-                        <input type="password" id="reg_password" name="password" class="form-control" required>
-                    </div>
-                    <div class="form-group">
                         <label for="reg_email">Email:</label>
                         <input type="email" id="reg_email" name="email" class="form-control" required>
+                    </div>
+                    <div class="form-group">
+                        <label for="reg_password">Kata sandi:</label>
+                        <input type="password" id="reg_password" name="password" class="form-control" required>
                     </div>
                     <div class="form-group">
                         <label for="reg_captcha">Captcha:</label>

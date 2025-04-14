@@ -63,18 +63,16 @@ session_start();
         <p id="current-time"></p>
 
         <?php if (isset($_SESSION['user'])): ?>
-            <div class="btn-group">
-                <a href="mytask.php" class="btn btn-primary">My Task</a>
-                <p>Halaman ini berisi daftar tugas Anda.</p>
-            </div>
-            <div class="btn-group">
-                <a href="profile.php" class="btn btn-primary">Profile</a>
-                <p>Halaman ini berisi informasi profil Anda.</p>
-            </div>
-            <div class="btn-group">
-                <a href="anotherpage.php" class="btn btn-primary">Another Page</a>
-                <p>Halaman ini berisi informasi lainnya.</p>
-            </div>
+            <div class="text-section" id="text-section">
+            <h2 style="font-family: 'Arial', sans-serif; color: #2c3e50; text-align: center;">Uji Kompetensi Keahlian</h2>
+            <p style="font-family: 'Georgia', serif; font-size: 18px; line-height: 1.6; text-align: justify; color: #34495e;">
+            Selamat datang di halaman website uji kompetensi keahlian Smk Yaspim! Website ini dirancang untuk membantu Anda dalam menyimpan list/tugas yang harus dikerjakan.
+            Anda dapat mengelola tugas-tugas Anda dengan lebih efisien dan terorganisir. Dengan fitur-fitur yang kami tawarkan, Anda dapat menambahkan, mengedit, dan menghapus tugas sesuai kebutuhan Anda.
+            </p>
+            <p style="font-family: 'Georgia', serif; font-size: 18px; line-height: 1.6; text-align: justify; color: #34495e;">
+            Kami berharap website ini dapat membantu Anda dalam menyelesaikan tugas-tugas dengan lebih baik. Jika Anda memiliki pertanyaan atau masukan, jangan ragu untuk menghubungi kami.
+            </p>
+        </div>
         <?php endif; ?>
     </div>
 
