@@ -54,6 +54,21 @@ include 'navbar.php';
             border: 0;
             border-radius: 8px;
         }
+        body.dark-mode {
+            background-color: #121212;
+            color: #ffffff;
+        }
+        .dark-mode .contact-container {
+            background-color: #333333;
+            color: #ffffff;
+        }
+        .dark-mode .panel-heading {
+            background-color: #444444;
+            color: #ffffff;
+        }
+        .dark-mode .panel-body {
+            color: #ffffff;
+        }
     </style>
 </head>
 <body>
@@ -78,7 +93,7 @@ include 'navbar.php';
             </div>
             <div class="contact-item">
                 <strong>Facebook:</strong>
-                <a href="https://facebook.com/yourusername" target="_blank">Aldyy</a>
+                <a href="https://facebook.com/shzeeqaa" target="_blank">Aldyy</a>
             </div>
             <div class="contact-item">
                 <strong>Address:</strong>

@@ -46,6 +46,10 @@ $tasks = $conn->query("SELECT tasks.*, users.username FROM tasks JOIN users ON t
     <div class="form-group">
         <input type="text" id="search" class="form-control" placeholder="Search tasks...">
     </div>
+    <div class="form-group">
+        <label for="filterDate">Filter Berdasarkan Tanggal:</label>
+        <input type="date" id="filterDate" class="form-control">
+    </div>
     <div class="text-center">
         <select id="sortOptions" class="form-control">
             <option value="all">Semua</option>
@@ -86,6 +90,17 @@ $tasks = $conn->query("SELECT tasks.*, users.username FROM tasks JOIN users ON t
                 } else {
                     $("#taskTable tr").show();
                 }
+            });
+        });
+    </script>
+    <script>
+        $(document).ready(function(){
+            $("#filterDate").on("change", function() {
+                var selectedDate = $(this).val();
+                $("#taskTable tr").filter(function() {
+                    var taskDate = $(this).data("date").split(' ')[0];
+                    $(this).toggle(taskDate === selectedDate);
+                });
             });
         });
     </script>
