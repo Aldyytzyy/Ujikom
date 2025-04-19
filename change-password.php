@@ -4,12 +4,11 @@ if (session_status() == PHP_SESSION_NONE) {
 }
 
 if (!isset($_SESSION['user'])) {
-    // User is not logged in, redirect to login page or display message
     echo '<script>alert("You must login first"); window.location.href = "index.php";</script>';
-    exit(); // Stop further execution
+    exit(); 
 }
 
-// Continue with the rest of the page code if the user is logged in
+
 $user = $_SESSION['user'];
 ?>
 

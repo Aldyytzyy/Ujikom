@@ -46,7 +46,6 @@ if (session_status() == PHP_SESSION_NONE) {
 <body>
 <nav class="navbar navbar-inverse">
     <div class="container-fluid">
-        <!-- Button for hamburger menu on small screens -->
         <div class="navbar-header">
             <button type="button" class="navbar-toggle" data-toggle="collapse" data-target="#myNavbar">
                 <span class="icon-bar"></span>
